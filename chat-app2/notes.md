@@ -284,7 +284,7 @@
     - create userSocketMap to store online users
 	- get userId by using socket.handshake.query.userId
 	- assign it to userSocketMap
-	- the io.emit
+	- then io.emit
 	- when disconnect, delete userId from userSocketMap then io.emit again
 	- in connectSocket in client, add authUser._id to userId in the query in io, so the userId reaches the backend
 	- give it a fucking try

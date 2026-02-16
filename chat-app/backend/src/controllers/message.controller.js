@@ -42,6 +42,8 @@ export const sendMessage = async (req, res) => {
         const { id: receiverId } = req.params;
         const senderId = req.user._id;
 
+		console.log("masuk sendMessage");
+
         let imageUrl;
 
         if (image) {
@@ -66,7 +68,7 @@ export const sendMessage = async (req, res) => {
 
         res.status(201).json(newMessage);
     } catch (error) {
-        console.log("Error in sendMessage controller: ", error.message);
+        console.log("Error in sendMessage controller: ", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
 };
