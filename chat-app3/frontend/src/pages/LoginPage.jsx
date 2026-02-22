@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAuthStore } from "../stores/useAuthStore";
-import { Eye, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
+import AuthImagePattern from "../components/AuthImagePattern";
 
 const LoginPage = () => {
     const { login, isLoggingIn } = useAuthStore();
@@ -129,6 +130,12 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* right side */}
+            <AuthImagePattern
+                title="Join our community"
+                subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+            />
         </div>
     );
 };

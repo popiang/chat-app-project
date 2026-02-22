@@ -197,7 +197,7 @@
 33. then create the login page, simply follow the code from the video, to many elements and class names
 34. now we want to start working on the profile page
     - create updateProfile skeleton function in the useAuthStore first
-	- the finish the ProfilePage, follow the code in the video, too many elements and class names
+	- then finish the ProfilePage, follow the code in the video, too many elements and class names
 	- then finish the updateProfile function
 	  - set isUpdatingProfile to true
 	  - try catch finally
