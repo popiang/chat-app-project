@@ -216,6 +216,7 @@
 	- follow standard zustand store file
 	- export useThemeStore, create(set) => {}
 	- contains theme, setTheme
+	- don't forget to set date-theme in App.jsx
 41. now in SettingsPage
     - create PREVIEW_MESSAGES constant
 	- complete the SettingsPage component, simply follow the code from the video, too many elements and class names

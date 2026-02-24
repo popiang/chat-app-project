@@ -19,7 +19,7 @@ const SettingsPage = () => {
         <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
             <div className="space-y-6">
                 <div className="flex flex-col gap-1">
-                    <h2 className="text-lg fong-semibold">Theme</h2>
+                    <h2 className="text-lg font-semibold">Theme</h2>
                     <p className="text-sm text-base-content/70">
                         Choose a theme for your chat interface
                     </p>
@@ -29,7 +29,7 @@ const SettingsPage = () => {
                     {THEMES.map((t) => (
                         <button
                             key={t}
-                            className={`group flex flex-col items-center gap-1.55 p-2 rounded-lg transition-colors ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}`}
+                            className={`group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}`}
                             onClick={() => setTheme(t)}
                         >
                             <div
@@ -64,7 +64,7 @@ const SettingsPage = () => {
                                             J
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text sm">
+                                            <h3 className="font-medium text-sm">
                                                 John Doe
                                             </h3>
                                             <p className="text-xs text-base-content/70">
