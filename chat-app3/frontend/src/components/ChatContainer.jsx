@@ -1,6 +1,7 @@
 import { useChatStore } from "../stores/useChatStore";
 import { useAuthStore } from "../stores/useAuthStore";
 import { useEffect } from "react";
+import ChatHeader from "./ChatHeader";
 
 const ChatContainer = () => {
 	const {messages, getMessages, isMessageLoading} = useChatStore();

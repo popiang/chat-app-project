@@ -243,7 +243,7 @@
     - bring in messages, getMessages, isMessageLoading and selectedUser from useChatStore
 	- call useEffect to get messages for selectedUser
 	- if isMessagesLoading, return skeleton
-	  - chatheadaer
+	  - chatheader
 	  - messageskeleton
 	  - messageinput
 	- chatcontainer return
