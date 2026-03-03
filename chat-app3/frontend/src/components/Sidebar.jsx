@@ -2,6 +2,7 @@ import { useChatStore } from "../stores/useChatStore";
 import { useAuthStore } from "../stores/useAuthStore";
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
+import SidebarSkeleton from "./skeletons/SidebarSkeleton";
 
 const Sidebar = () => {
     const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
@@ -73,7 +74,7 @@ const Sidebar = () => {
                                 {user.fullName}
                             </div>
                             <div className="text-sm text-zinc-400">
-                                {onlineUsers.include(user._id)
+                                {onlineUsers.includes(user._id)
                                     ? "Online"
                                     : "Offline"}
                             </div>
