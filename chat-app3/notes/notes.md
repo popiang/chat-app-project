@@ -274,7 +274,7 @@
 	- create io
 	- then, io.on(connection)
 	- export io, app, server
-	- in index.js, replace app with app fro socket.js
+	- in index.js, replace app with app from socket.js
 	- bring as well server and replace app.listen to server.listen
 54. next in frontend, install socket.io-client
 55. in useAuthStore import io

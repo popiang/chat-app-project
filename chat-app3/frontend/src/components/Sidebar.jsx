@@ -32,7 +32,7 @@ const Sidebar = () => {
                     </span>
                 </div>
 
-                <div className="mt-3 hidden lg-flex items-center gap-2">
+                <div className="mt-3  lg-flex items-center gap-2">
                     <label className="cursor-pointer flex items-center gap-2">
                         <input
                             type="checkbox"
