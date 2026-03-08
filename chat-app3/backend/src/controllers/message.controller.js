@@ -58,7 +58,11 @@ export const sendMessage = async (req, res) => {
 
         await newMessage.save();
 
+		// get socket id of the message receiver
+		// the socket id shoud be available is the receiver is online
 		const receiverSocketId = getReceiverSocketId(receiverId);
+
+		// if there's socket id (receiver is online), socket io will send the message to the receiver
 		if (receiverSocketId) {
 			io.to(receiverSocketId).emit("newMessage", newMessage);
 		}
