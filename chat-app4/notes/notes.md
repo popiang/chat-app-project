@@ -28,6 +28,7 @@
 	- hash the password
 	- create newUser with new User({})
 	- if newUser exist
+	  - save newUser
 	  - generate jwt token and store in cookies
 	  - create generateToken function in libs
 	    - create utils.js
