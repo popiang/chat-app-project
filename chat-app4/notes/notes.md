@@ -55,7 +55,7 @@
     - try catch
 	- only need to remove token from cookie
 	- res.cookie("jwt", "", {maxAge: 0})
-	- res.status 200 with message
+	- res.status 204 with message
 	- in catch, console log and also return 500 with internal server error
 21. now test everything with postman
 22. now we want to add updateProfile route
@@ -96,7 +96,7 @@
 	- call config()
 	- set cloudinary config, set the cloud_name, api_key and api_secret
 	- export default cloudinary
-24. add check route to checkAuth
+24. add check route to checkAuth - get method
     - in auth.route.js, add /check route, call protectRoute first, then call checkAuth
 	- create checkAuth controller function
 	  - try catch
