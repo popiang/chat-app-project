@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { useAuthStore } from "../stores/useAuthStore";
-import { Eye, EyeOff, Lock, Mail, MessageSquare, User } from "lucide-react";
+import {
+    Eye,
+    EyeOff,
+    Loader,
+    Lock,
+    Mail,
+    MessageSquare,
+    User,
+} from "lucide-react";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import AuthImagePattern from "../components/AuthImagePattern";
 
 const SignupPage = () => {
     const { signup, isSigningUp } = useAuthStore();
@@ -11,10 +22,23 @@ const SignupPage = () => {
         password: "",
     });
 
-    const validateForm = () => {};
+    const validateForm = () => {
+        if (!formData.fullName.trim())
+            return toast.error("Full name is required");
+        if (!formData.email.trim()) return toast.error("Email is required");
+        if (!/\S+@\S+\.\S+/.test(formData.email))
+            return toast.error("Invalid email address");
+        if (formData.password.length < 6)
+            return toast.error("Password must be at least 6 characters long");
+
+        return true;
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const successValidation = validateForm();
+        if (successValidation) signup(formData);
     };
 
     return (
@@ -113,7 +137,7 @@ const SignupPage = () => {
                                 />
                                 <button
                                     type="button"
-                                    className="absolute inset-y-10 right-0 pr-3 flex items-center"
+                                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
                                     onClick={() =>
                                         setShowPassword(!showPassword)
                                     }
@@ -126,9 +150,39 @@ const SignupPage = () => {
                                 </button>
                             </div>
                         </div>
+
+                        <button
+                            type="submit"
+                            className="btn btn-primary w-full"
+                            disabled={isSigningUp}
+                        >
+                            {isSigningUp ? (
+                                <>
+                                    <Loader className="size-5 animate-spin" />
+                                    Loading...
+                                </>
+                            ) : (
+                                "Create Account"
+                            )}
+                        </button>
                     </form>
+
+                    <div className="text-center">
+                        <p className="text-base-content/60">
+                            Already have an account?{" "}
+                            <Link to="/login" className="link link-primary">
+                                Sign in
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            {/* right side */}
+            <AuthImagePattern
+                title="Join our community"
+                subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+            />
         </div>
     );
 };
