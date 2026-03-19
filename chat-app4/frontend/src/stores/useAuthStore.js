@@ -69,7 +69,7 @@ export const useAuthStore = create((set) => ({
     updateProfile: async (data) => {
         try {
             set({ isUpdatingProfile: true });
-            const updateResponse = await axiosInstance.post(
+            const updateResponse = await axiosInstance.put(
                 "/auth/update-profile",
                 data,
             );
